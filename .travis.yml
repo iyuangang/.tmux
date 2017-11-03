@@ -12,10 +12,11 @@ addons:
   apt:
     packages:
       - vim
+      - ctags
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update          ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install vim; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install vim ctags; fi
 
 script:
   - cp ~/.vimrc ~/.vimrcbak ; cp -r ~/.vim ~/.vimbak ; rm -rf ~/.vimrc ~/.vim
