@@ -200,7 +200,5 @@ More configs / Tools
 Other
 -----
 
-* Github: http://www.github.com/tony
-* Website: http://www.git-pull.com
+* Github: http://www.github.com/iyuangang
 * LICENSE: MIT
-* Author: Tony Narlock (tony@git-pull.com)
