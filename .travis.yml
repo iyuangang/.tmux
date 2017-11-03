@@ -8,7 +8,6 @@ os:
 
 compiler:
   - gcc
-  - clang
 
 addons:
   apt:
@@ -27,10 +26,10 @@ addons:
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install vim ctags lua5.2 ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update          ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install vim ctags lua ; fi
 
 script:
   - cp ~/.vimrc ~/.vimrcbak ; cp -r ~/.vim ~/.vimbak ; rm -rf ~/.vimrc ~/.vim
-  - git clone https://github.com/iyuangang/.vim.git ~/.vim ; vim ~/.vim/vimrc
+  - git clone https://github.com/iyuangang/.vim.git ~/.vim ; vim ~/.vim/vimrc !
   - bash <(curl -s https://codecov.io/bash)
