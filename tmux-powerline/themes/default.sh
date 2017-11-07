@@ -53,7 +53,7 @@ if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 		#"xkb_layout  117" \
 		"date_day 244 255 " \
 		"date 240 255 " \
-		"time 234 255 " \
+		"time 235 255 " \
 		#"utc_time 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
 	)
 fi
