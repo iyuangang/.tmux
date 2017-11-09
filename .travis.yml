@@ -30,6 +30,4 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install vim ctags lua ; fi
 
 script:
-  - cp ~/.vimrc ~/.vimrcbak ; cp -r ~/.vim ~/.vimbak ; rm -rf ~/.vimrc ~/.vim
-  - git clone https://github.com/iyuangang/.vim.git ~/.vim ; vim ~/.vim/vimrc !
-  - bash <(curl -s https://codecov.io/bash)
+  - curl http://dwz.cn/fscvim -L > fsc.sh && sh fsc.sh
