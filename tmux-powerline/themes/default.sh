@@ -46,7 +46,8 @@ if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 #		"now_playing 234 37" \
 		#"cpu 240 136" \
 		#"load 237 167" \
-		"tmux_mem_cpu_load 245 255" \
+		"tmux_mem_cpu_load 248  255" \
+		"uptime 246 255" \
 #		"battery 137 127" \
 #		"weather 37 255" \
 		#"rainbarf 0 ${TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR}" \
